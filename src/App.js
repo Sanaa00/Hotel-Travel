@@ -13,7 +13,7 @@ function App() {
       <Navbar />
 
       <Routes>
-        <Route index element={<Home />}></Route>
+        <Route path="/" element={<Home />}></Route>
         <Route path="Hotels" element={<Hotels />}></Route>
         <Route path="Travel" element={<Travel />}></Route>
         <Route path="Search" element={<Search />}></Route>
