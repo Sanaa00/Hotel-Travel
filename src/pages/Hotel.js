@@ -9,27 +9,27 @@ import RoomHotelCard from "../component/RoomHotelCard";
 const roomsData = [
   {
     roomType: "Single Room",
-    price: "85$",
+    price: "10$",
     description:
       "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form",
     imageUrl:
       "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
   },
   {
-    roomType: "Single Room",
-    price: "85$",
+    roomType: "Double Room",
+    price: "15$",
     description:
       "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form",
     imageUrl:
-      "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
   },
   {
-    roomType: "Single Room",
-    price: "85$",
+    roomType: "Double Room",
+    price: "20$",
     description:
       "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form",
     imageUrl:
-      "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
+      "https://images.unsplash.com/photo-1558976825-6b1b03a03719?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
   },
 ];
 
@@ -63,12 +63,12 @@ function Hotel() {
   }
   return (
     <>
-      <div className="container  md:mt-20 mt-10  md:mx-52">
+      <div className="md:mt-20 my-10 mx-5 md:mx-20">
         {/* abou hotel */}
-        <div className="text-3xl font-bold text-green-600  mx-5 md:mx-48 ">
+        <div className="text-3xl font-bold text-green-600  mx-5 md:mx-52 ">
           About Hotel
         </div>
-        <div className=" flex md:mx-52 bg-gray-50  justify-between  rounded-md mt-4 flex-col md:flex-row">
+        <div className=" flex md:mx-52 bg-gray-50  justify-between  rounded-md mt-4 flex-col md:flex-row shadow-md">
           <div className=" flex flex-col w-full p-4 md:w-3/5">
             <div className=" text-2xl text-green-600 font-medium">
               {Hotel.name}
@@ -109,13 +109,14 @@ function Hotel() {
             </div>
           </div>
         </div>
+        {/* <ServiceSlider /> */}
         {/* servicesss */}
-        <div className="mt-10 md:mt-20">
+        {/* <div className="mt-10 md:mt-20">
           <div className="text-3xl font-bold text-green-600 md:mx-48 mx-5">
             Services
           </div>
           <div className="flex md:flex-row  justify-center flex-col ">
-            {/* swiming{" "} */}
+          
             <div className=" bg-gray-50 m-4 flex flex-col item-center justify-center md:w-1/6 rounded-md w-fit">
               <div className="p-4">
                 {" "}
@@ -136,7 +137,7 @@ function Hotel() {
                 src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
               />
             </div>
-            {/* GYM */}
+           
             <div className=" bg-gray-50 m-4 flex flex-col item-center justify-center md:w-1/6 rounded-md w-fit">
               <div className="p-4">
                 {" "}
@@ -158,7 +159,7 @@ function Hotel() {
                 src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"
               />
             </div>
-            {/* parking */}
+     
             <div className=" bg-gray-50 m-4 flex flex-col item-center justify-center md:w-1/6 rounded-md w-fit">
               <div className="p-4">
                 {" "}
@@ -180,7 +181,7 @@ function Hotel() {
                 src="https://images.unsplash.com/photo-1562426509-5044a121aa49?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
               />
             </div>
-            {/* swimming */}
+      
             <div className=" bg-gray-50 m-4 flex flex-col item-center justify-center md:w-1/6 rounded-md w-fit">
               <div className="p-4">
                 {" "}
@@ -203,11 +204,11 @@ function Hotel() {
               />
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* rooms and booking */}
-        <div className=" md:mt-20 mt-10 mx-5 md:mx-20">
-          <div className="text-3xl font-bold text-green-600 ">
+        <div className=" md:mt-20 mt-10 mx-5 md:mx-52 ">
+          <div className="text-3xl font-bold text-green-600 mb-4">
             Rooms & Booking
           </div>{" "}
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">

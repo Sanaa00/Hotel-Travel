@@ -1,9 +1,8 @@
-import { Button } from "@mui/material";
 import React from "react";
 import { FaFacebookSquare, FaInstagramSquare } from "react-icons/fa";
 function Footer() {
   return (
-    <div className="bg-gray-50 shadow-md">
+    <div className="bg-gray-100 flex shadow-lg">
       <p className="px-20 pt-10 text-2xl font-medium text-gray-600">
         Tourist Web
       </p>

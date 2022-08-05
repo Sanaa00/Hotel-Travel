@@ -5,7 +5,7 @@ const RoomHotelCard = ({ roomType, price, description, imageUrl }) => {
   const [isBooked, setIsBooked] = useState(false);
 
   return (
-    <div className="bg-gray-50">
+    <div className="bg-gray-50 rounded-md shadow-md">
       <div className="flex flex-col md:h-2/6 md:m-4 rounded-md">
         <div className="  flex flex-col p-1 m-2">
           <div className="text-xl font-medium text-green-600 flex flex-row justify-between py-2">
@@ -37,7 +37,7 @@ const RoomHotelCard = ({ roomType, price, description, imageUrl }) => {
             <button
               className={`${
                 isBooked ? "bg-red-400" : "bg-green-600"
-              } text-white text-sm w-full py-1 mt-2 rounded-md  drop-shadow-md hover:bg-green-600 hover:opacity-80 active:bg-red-400`}
+              } text-white text-sm w-full py-1 mt-2 rounded-md  drop-shadow-md hover:opacity-80 active:bg-red-400`}
               onClick={() => {
                 setIsBooked(!isBooked);
               }}
@@ -47,7 +47,11 @@ const RoomHotelCard = ({ roomType, price, description, imageUrl }) => {
           </div>
         </div>
         <div>
-          <img className="object-cover" alt="single room" src={imageUrl} />
+          <img
+            className="object-cover rounded-md"
+            alt="single room"
+            src={imageUrl}
+          />
         </div>
       </div>
     </div>
