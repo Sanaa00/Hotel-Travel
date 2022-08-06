@@ -13,15 +13,15 @@ export default function Signin() {
             </p>
           </div>
           <div>
-            <section class="flex w-[30rem] flex-col ">
-              <div class=" transform border-b-2 bg-transparent text-lg duration-300 focus-within:border-green-500 my-5">
+            <section class="flex w-[30rem] flex-col mt-5">
+              <div class=" transform border-2 bg-transparent text-lg duration-300 focus-within:border-green-500 my-3 shadow-md rounded-md p-2">
                 <input
                   type="Email"
                   placeholder={`Email`}
                   class=" border-none bg-transparent outline-none placeholder:italic focus:outline-none"
                 />
               </div>
-              <div class=" transform border-b-2 bg-transparent text-lg duration-300 focus-within:border-green-500 my-5">
+              <div class=" transform border-b-2 bg-transparent text-lg duration-300 focus-within:border-green-500 my-3 shadow-lg rounded-md p-2">
                 <input
                   className=""
                   type="Password"

@@ -20,14 +20,14 @@ function ForgetPassword() {
                   link to reset it , please write your Email ...
                 </p>
               </div>
-              <div class=" transform border-b-2 bg-transparent text-lg duration-300 focus-within:border-green-500 my-5">
+              <div class=" transform border-2 bg-transparent text-lg duration-300 focus-within:border-green-500 my-3 shadow-md rounded-md p-2">
                 <input
                   type="Email"
                   placeholder={`Email`}
                   class=" border-none bg-transparent outline-none placeholder:italic focus:outline-none"
                 />
               </div>
-              <div className="mt-5 mb-2 rounded-md bg-green-600 w-[30rem] py-2 font-medium text-l hover:bg-green-400   text-white shadow-md text-center">
+              <div className="mt-5 mb-2 rounded-md bg-green-600 w-[30rem] py-2 font-medium text-l hover:bg-green-400   text-white shadow-lg text-center">
                 <Link to="">Reset password</Link>
               </div>{" "}
               <div className="flex flex-row">
