@@ -109,6 +109,7 @@ function Hotel() {
             </div>
           </div>
         </div>
+
         {/* <ServiceSlider /> */}
         {/* servicesss */}
         {/* <div className="mt-10 md:mt-20">
