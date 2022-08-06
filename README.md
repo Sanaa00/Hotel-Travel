@@ -6,7 +6,7 @@
   .Home
   .Hotel
   .Travel Agency
-  .signIn/Login
+  .signIn/Login/forget
 
 -feature
 .react-route

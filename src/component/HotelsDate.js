@@ -22,12 +22,15 @@ export default function HotelsDate() {
   if (err) return <div> There was an error fetching ur data: {err}</div>;
   if (!Hotels)
     return (
-      <div className="flex items-center justify-center opacity-50 w-full align-middle  place-content-center">
-        <div class="lds-ring flex items-center justify-center h-full w-full">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+      <div>
+        {" "}
+        <div className="flex items-center justify-center opacity-50 w-full align-middle  place-content-center">
+          <div class="lds-ring flex items-center justify-center h-full w-full">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
         </div>
       </div>
     );
