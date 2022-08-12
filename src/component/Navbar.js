@@ -14,7 +14,7 @@ function Navbar() {
               </li>
               <li>
                 <Link
-                  to="/Home"
+                  to="/"
                   className="text-green-600 dark:text-white  text-2xl hovertext-green-600 hover:opacity-80"
                   aria-current="page"
                 >

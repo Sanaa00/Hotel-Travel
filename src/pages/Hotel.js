@@ -5,6 +5,7 @@ import axios from "axios";
 import { IoLocationSharp } from "react-icons/io5";
 import Footer from "../component/Footer";
 import RoomHotelCard from "../component/RoomHotelCard";
+import SliderCard from "../component/SliderCard";
 
 const roomsData = [
   {
@@ -36,7 +37,6 @@ const roomsData = [
 function Hotel() {
   const { id } = useParams();
   const [hotel, setHotel] = useState();
-  console.log(id);
 
   // function handleClick() {
   //   setButtonText("cancel");
@@ -48,11 +48,8 @@ function Hotel() {
   useEffect(() => {
     // https://pokeapi.co/api/v2/pokemon/1
     axios
-      .get(
-        `https://62dc35604438813a2613372b.mockapi.io/api/hotels/Hotels/${id}`
-      )
+      .get(`http://localhost:3001/hotels/${id}`)
       .then((result) => {
-        console.log(result.data);
         setHotel(result.data);
       })
       .catch((err) => console.log(err));
@@ -63,7 +60,7 @@ function Hotel() {
       <div>
         {" "}
         <div className="flex items-center justify-center opacity-50 w-full align-middle  place-content-center">
-          <div class="lds-ring flex items-center justify-center h-full w-full">
+          <div className="lds-ring flex items-center justify-center h-full w-full">
             <div></div>
             <div></div>
             <div></div>
@@ -75,15 +72,15 @@ function Hotel() {
   }
   return (
     <>
-      <div className="md:mt-20 my-10 mx-5 md:mx-20">
+      <div className="md:mt-20 my-10 mx-5 lg:mx-20">
         {/* abou hotel */}
         <div className="text-3xl font-bold text-green-600  mx-5 md:mx-52 ">
           About Hotel
         </div>
-        <div className=" flex md:mx-52 bg-gray-50  justify-between  rounded-md mt-4 flex-col md:flex-row shadow-md">
-          <div className=" flex flex-col w-full p-4 md:w-3/5">
+        <div className=" flex md:mx-52 bg-gray-50  justify-between  rounded-md mt-4 flex-col shadow-md md:flex-col lg:flex-row">
+          <div className=" flex flex-col w-full p-4 lg:w-3/5">
             <div className=" text-2xl text-green-600 font-medium">
-              {Hotel.name}
+              {hotel.name}
             </div>
             <div>stars</div>
             <div>
@@ -104,9 +101,9 @@ function Hotel() {
               from repetition, injected humour, or non-characteristic words etc.
             </div>
           </div>
-          <div className=" w-full flex flex-col items-center p-4 md:w-2/5  justify-between">
+          <div className=" w-full flex flex-col items-center p-4 lg:w-2/5  justify-between md:w-full ">
             <img
-              className="rounded-lg object-fill "
+              className="rounded-lg object-fit w-full h-full "
               alt="hotel"
               src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
             />
@@ -121,7 +118,7 @@ function Hotel() {
             </div>
           </div>
         </div>
-
+        <SliderCard />
         {/* <ServiceSlider /> */}
         {/* servicesss */}
         {/* <div className="mt-10 md:mt-20">

@@ -46,13 +46,8 @@ const RoomHotelCard = ({ roomType, price, description, imageUrl }) => {
             </button>
           </div>
         </div>
-        <div>
-          <img
-            className="object-cover rounded-md"
-            alt="single room"
-            src={imageUrl}
-          />
-        </div>
+
+        <img className=" rounded-md w-fit" alt="single room" src={imageUrl} />
       </div>
     </div>
   );
