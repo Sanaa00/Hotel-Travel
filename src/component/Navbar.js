@@ -31,7 +31,7 @@ function Navbar() {
               </li>
               <li>
                 <Link
-                  to="/travel"
+                  to="/Travels"
                   className="text-green-600 dark:text-white  text-2xl hover:text-green-600 hover:opacity-80"
                 >
                   Travels
@@ -39,14 +39,19 @@ function Navbar() {
               </li>
             </ul>
           </div>
-          <div className="grow-0 flex flex-row items-center p-4">
-            <Link to="/Profile">
+          <div className="grow-0 flex flex-col items-center p-4 justify-center">
+            <div className="pb-2">
               <img
                 alt="profile"
                 className="rounded-full w-12 h-12 "
                 src="https://images.unsplash.com/photo-1611175140153-bfd26338ff0d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80"
               />
-            </Link>
+            </div>
+            <div>
+              <Link to="/Profile">
+                <div className="font-medium text-green-700">My Profile</div>{" "}
+              </Link>
+            </div>
           </div>
         </div>
       </nav>

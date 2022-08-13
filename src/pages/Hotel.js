@@ -6,7 +6,7 @@ import { IoLocationSharp } from "react-icons/io5";
 import Footer from "../component/Footer";
 import RoomHotelCard from "../component/RoomHotelCard";
 import SliderCard from "../component/SliderCard";
-
+import Rating from "react-rating";
 const roomsData = [
   {
     roomType: "Single Room",
@@ -38,15 +38,32 @@ function Hotel() {
   const { id } = useParams();
   const [hotel, setHotel] = useState();
 
-  // function handleClick() {
-  //   setButtonText("cancel");
-  // }
+  const yellowStar = (
+    <svg
+      aria-hidden="true"
+      className="w-5 h-5 text-yellow-400"
+      fill="currentColor"
+      viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <title>First star</title>
+      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+    </svg>
+  );
 
-  // function handleClickAgain() {
-  //   setButtonText("Booking");
-  // }
+  const greyStar = (
+    <svg
+      aria-hidden="true"
+      className="w-5 h-5 text-gray-400"
+      fill="currentColor"
+      viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <title>First star</title>
+      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+    </svg>
+  );
   useEffect(() => {
-    // https://pokeapi.co/api/v2/pokemon/1
     axios
       .get(`http://localhost:3001/hotels/${id}`)
       .then((result) => {
@@ -82,7 +99,16 @@ function Hotel() {
             <div className=" text-2xl text-green-600 font-medium">
               {hotel.name}
             </div>
-            <div>stars</div>
+            <div>
+              {" "}
+              <Rating
+                className="pt-2 mr-2"
+                initialRating={hotel.star}
+                fullSymbol={yellowStar}
+                emptySymbol={greyStar}
+                readonly={true}
+              />
+            </div>
             <div>
               There are many variations of passages of Lorem Ipsum available,
               but the majority have suffered alteration in some form, by model
@@ -105,7 +131,7 @@ function Hotel() {
             <img
               className="rounded-lg object-fit w-full h-full "
               alt="hotel"
-              src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              src={hotel.image}
             />
 
             <div>

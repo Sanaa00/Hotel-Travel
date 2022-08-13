@@ -171,7 +171,7 @@ function Home() {
                 </div>
                 <div>
                   <Link
-                    to="/Travel"
+                    to="/Travels"
                     className="btn bg-green-600  text-white text-sm md:px-16 px-4 lg:px-20 sm:px-10 py-1 rounded-md my-2 grow-0 mx-1 drop-shadow-md hover:bg-green-600 hover:opacity-80 "
                   >
                     View All
@@ -246,7 +246,7 @@ function Home() {
                                 </div>
                                 <div>
                                   <Link
-                                    to={`/hotel/${travel.id}`}
+                                    to={`/travel/${travel.id}`}
                                     className="btn bg-green-600 text-white text-sm  md:px-32 py-1  p-64  rounded-md my-2 md:mx-1 drop-shadow-md hover:bg-green-600 hover:opacity-80 lg:mx-28"
                                   >
                                     View
