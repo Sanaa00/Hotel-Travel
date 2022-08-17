@@ -1,39 +1,15 @@
 import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import Rating from "react-rating";
+import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { IoLocationSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import Search from "../component/Search";
+import Footer from "../component/Footer";
+import Loading from "../component/Loading";
 export default function Travels() {
   const [Travels, setTravel] = useState();
   const [err, setErr] = useState("");
-
-  const yellowStar = (
-    <svg
-      aria-hidden="true"
-      className="w-5 h-5 text-yellow-400"
-      fill="currentColor"
-      viewBox="0 0 20 20"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <title>First star</title>
-      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-    </svg>
-  );
-
-  const greyStar = (
-    <svg
-      aria-hidden="true"
-      className="w-5 h-5 text-gray-400"
-      fill="currentColor"
-      viewBox="0 0 20 20"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <title>First star</title>
-      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-    </svg>
-  );
 
   useEffect(() => {
     // get request to the API endpoint
@@ -47,30 +23,17 @@ export default function Travels() {
   }, []);
 
   if (err) return <div> There was an error fetching ur data: {err}</div>;
-  if (!Travels)
-    return (
-      <div>
-        {" "}
-        <div className="flex items-center justify-center opacity-50 w-full align-middle  place-content-center">
-          <div className="lds-ring flex items-center justify-center h-full w-full">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-        </div>
-      </div>
-    );
+  if (!Travels) return <Loading />;
   return (
     <>
       <Search hotelsData={Travels} setHotelsData={setTravel} />
 
-      <div className="container mx-auto my-10 ">
+      <div className="container mx-auto mt-10 min-h-screen mb-32  ">
         <ul>
           {Travels.map((travel) => {
             return (
               <div key={travel.id}>
-                <div className="text-xl rounded-md  my-4 lg:mx-40 p-2 bg-gray-50 flex flex-row  hover:bg-gray-100 drop-shadow md:flex-col sm:flex-row lg:w-5/6">
+                <div className="text-xl rounded-md lg:mx-20 my-4 2xl:mx-40 p-2 bg-gray-50 flex flex-row  hover:bg-gray-100 drop-shadow md:flex-col sm:flex-row xl:w-5/6">
                   <div className="flex flex-row justify-between">
                     <div className="flex grow flex-col  justify-between basis-3/4">
                       <div className="flex lg:flex-row flex-col justify-between text-slate-600 pl-8 sm:flex-col">
@@ -79,13 +42,15 @@ export default function Travels() {
                             {travel.name}
                           </div>
                           <div className="text-base">
-                            <Rating
-                              className="pt-2 mr-2"
-                              initialRating={travel.star}
-                              fullSymbol={yellowStar}
-                              emptySymbol={greyStar}
-                              readonly={true}
-                            />
+                            <div className="text-base flex my-2">
+                              {[1, 2, 3, 4, 5].map((_, index) =>
+                                travel.star > index ? (
+                                  <AiFillStar key={index} fill="#e8de23" />
+                                ) : (
+                                  <AiOutlineStar key={index} color="#e8de23" />
+                                )
+                              )}
+                            </div>
                           </div>
                           <div className="text-sm">{travel.description}</div>
                         </div>
@@ -102,14 +67,14 @@ export default function Travels() {
                           <div>
                             <Link
                               to={`/travel/${travel.id}`}
-                              className="btn bg-green-600 text-white text-sm  md:px-32 py-1  p-64  rounded-md my-2 lg:mx-1 drop-shadow-md hover:bg-green-600 hover:opacity-80 lg:px-28"
+                              className="btn bg-gradient-to-r from-green-600 to-emerald-600 ... text-white text-sm  md:px-32 py-1  p-64  rounded-md my-2 lg:mx-1 drop-shadow-md hover:bg-green-600 hover:opacity-80 xl:px-32 lg:px-28"
                             >
                               View
                             </Link>
                           </div>
                           <div className="text-sm flex flex-row justify-center items-center px-2 mx-2 pt-1">
                             <div className="px-1">
-                              <IoLocationSharp />
+                              <IoLocationSharp fill="#0ca34a" />
                             </div>
                             <div>{travel.location}</div>
                           </div>
@@ -123,6 +88,7 @@ export default function Travels() {
           })}
         </ul>
       </div>
+      <Footer />
     </>
   );
 }

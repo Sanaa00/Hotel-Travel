@@ -36,8 +36,10 @@ const RoomHotelCard = ({ roomType, price, description, imageUrl }) => {
           <div className="flex flex-row items-center justify-center text-center  ">
             <button
               className={`${
-                isBooked ? "bg-red-400" : "bg-green-600"
-              } text-white text-sm w-full py-1 mt-2 rounded-md  drop-shadow-md hover:opacity-80 active:bg-red-400`}
+                isBooked
+                  ? "bg-red-400"
+                  : "bg-gradient-to-r from-green-600 to-emerald-600 ..."
+              } text-white text-sm w-full py-1 mt-2 rounded-md  drop-shadow-md hover:opacity-80 active:bg-red-400 `}
               onClick={() => {
                 setIsBooked(!isBooked);
               }}

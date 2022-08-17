@@ -9,13 +9,13 @@ function Navbar() {
         <div className=" p-4  flex flex-row  justify-between items-center">
           <div className="flex flex-row py-3 px-2 md:px-6 items-center justify-between h-16 grow">
             <ul className="flex flex-row  mt-0 mr-6 space-x-8 font-medium   ">
-              <li className="text-green-600 dark:text-white  text-2xl ">
+              <li className="text-green-600 dark:text-white  text-2xl font-bold">
                 Tourist web
               </li>
               <li>
                 <Link
                   to="/"
-                  className="text-green-600 dark:text-white  text-2xl hovertext-green-600 hover:opacity-80"
+                  className="text-green-600 dark:text-white  text-2xl hovertext-green-600 hover:opacity-80 font-bold"
                   aria-current="page"
                 >
                   Home
@@ -24,7 +24,7 @@ function Navbar() {
               <li>
                 <Link
                   to="/Hotels"
-                  className="text-green-600 dark:text-white  text-2xl hover:text-green-600 hover:opacity-80"
+                  className="text-green-600 dark:text-white  text-2xl hover:text-green-600 hover:opacity-80 font-bold"
                 >
                   Hotels
                 </Link>
@@ -32,7 +32,7 @@ function Navbar() {
               <li>
                 <Link
                   to="/Travels"
-                  className="text-green-600 dark:text-white  text-2xl hover:text-green-600 hover:opacity-80"
+                  className="text-green-600 dark:text-white  text-2xl hover:text-green-600 hover:opacity-80 font-bold"
                 >
                   Travels
                 </Link>
@@ -49,7 +49,7 @@ function Navbar() {
             </div>
             <div>
               <Link to="/Profile">
-                <div className="font-medium text-green-700">My Profile</div>{" "}
+                <div className=" text-green-600 font-bold">My Profile</div>{" "}
               </Link>
             </div>
           </div>

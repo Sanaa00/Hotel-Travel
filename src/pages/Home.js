@@ -1,55 +1,129 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { IoLocationSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import Footer from "../component/Footer";
-import { AiFillStar, AiOutlineStar } from "react-icons/ai";
+import HomeSlider from "../component/HomeSlider";
 
 function Home() {
-  const [Hotels, setHotels] = useState();
-  const [Travels, setTravel] = useState();
-  const [err, setErr] = useState("");
+  // const [Hotels, setHotels] = useState();
+  // const [Travels, setTravel] = useState();
+  // const [err, setErr] = useState("");
 
-  useEffect(() => {
-    // get request to the API endpoint
-    axios
-      .get("http://localhost:3001/hotels")
-      .then((result) => {
-        console.log(result.data);
-        return setHotels(result.data);
-      })
-      .catch((err) => setErr(err));
-  }, []);
-  useEffect(() => {
-    // get request to the API endpoint
-    axios
-      .get("http://localhost:3001/travels")
-      .then((result) => {
-        console.log(result.data);
-        return setTravel(result.data);
-      })
-      .catch((err) => setErr(err));
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:3001/hotels")
+  //     .then((result) => {
+  //       console.log(result.data);
+  //       return setHotels(result.data);
+  //     })
+  //     .catch((err) => setErr(err));
+  // }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:3001/travels")
+  //     .then((result) => {
+  //       console.log(result.data);
+  //       return setTravel(result.data);
+  //     })
+  //     .catch((err) => setErr(err));
+  // }, []);
 
-  if (err) return <div> There was an error fetching ur data: {err}</div>;
-  if (!Hotels)
-    return (
-      <div>
-        {" "}
-        <div className="flex items-center justify-center opacity-50 w-full align-middle  place-content-center">
-          <div className="lds-ring flex items-center justify-center h-full w-full">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-        </div>
-      </div>
-    );
+  // if (err) return <div> There was an error fetching ur data: {err}</div>;
+  // if (!Hotels || !Travels) return <Loading />;
 
   return (
     <>
-      <div className="mt-32">
+      {" "}
+      <div className="container 2xl:mx-48 min-h-screen ">
+        <div className="flex lg:flex-row flex-col items-center justify-center bg-gray-50 rounded-md my-32 p-4 shadow-md">
+          <div className="flex flex-col items-start  grow lg:pl-4 justify-center">
+            <div className="text-green-600 font-bold text-5xl mb-4 ">
+              Our website help tourist and collect <br></br>information in
+              Kurdistan
+            </div>
+            <div className="text-gray-600">
+              when an unknown printer took a galley of type and scrambled it to
+              make a type specimen book.<br></br> It has survived not only five
+              centuries, but also the leap into electronic typesetting,
+              remaining<br></br> essentially unchanged. It was popularised in
+              the 1960s with the release of Letraset sheets containing Lorem
+              Ipsum passages
+            </div>
+            <div className="flex flex-row md:flex-col md:justify-center items-center md:items-start my-5 space-x-3 md:space-x-0">
+              <div>
+                <button className="bg-gradient-to-r from-green-600 to-emerald-600 rounded-md py-2 px-8 text-gray-50">
+                  Contact Us
+                </button>
+              </div>
+              <div className="flex flex-row  justify-center items-center lg:mt-10">
+                <p className="text-3xl font-bold text-green-600 ">30.0 K </p>
+
+                <p className="text-gray-400 font-bold">&nbsp; Active User</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="lg:w-3/6 lg:h-fit  items-end justify-center grow-0 h-3/6 w-5/6">
+            <HomeSlider />
+          </div>
+        </div>
+        <div className="flex flex-col items-center justify-center">
+          <div className="lg:mt-32 sm:mt-10 font-bold text-green-600 text-5xl ">
+            what we serve in this website ?
+          </div>
+          {/* hotel and travel */}
+          <div className="flex lg:flex-row flex-col justify-center items-center my-20 ">
+            <div className="   rounded-md shadow-md m-3 p-4 h-96 flex flex-col  justify-center bg-gradient-to-r from-green-600/10 to-emerald-600/10 ... lg:py-20">
+              <div className="text-green-600 font-bold text-3xl">Hotels</div>
+              <div className="text-gray-800 xl:mt-6">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s with the release of Letraset sheets
+                containing Lorem Ipsum passages, and more recently with desktop
+                publishing software like Aldus PageMaker including versions of
+                Lorem Ipsum.containing Lorem Ipsum passages, and more recently
+                with desktop publishing software like Aldus PageMaker including
+              </div>
+              <div className="mt-8 lg:mt-3">
+                <Link
+                  to="/Hotels"
+                  className="bg-gradient-to-r from-green-600 to-emerald-600 ... text-gray-50  py-2 px-12 rounded-md hover:bg-green-600 hover:opacity-80 shadow-md"
+                >
+                  Hotels
+                </Link>
+              </div>
+            </div>
+
+            <div className="   rounded-md shadow-md m-2 p-4 h-96 flex flex-col  justify-center bg-gradient-to-r from-green-600/10 to-emerald-600/10 ... ">
+              <div className="text-green-600 font-bold text-3xl">Travels</div>
+              <div className="text-gray-800 xl:mt-6">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s with the release of Letraset sheets
+                containing Lorem Ipsum passages, and more recently with desktop
+                publishing software like Aldus PageMaker including versions of
+                Lorem Ipsum.containing Lorem Ipsum passages, and more recently
+                with desktop publishing software like Aldus PageMaker including
+              </div>
+              <div className="mt-8 lg:mt-3">
+                <Link
+                  to="/Travels"
+                  className="bg-gradient-to-r from-green-600 to-emerald-600 ... text-gray-50  py-2 px-12 rounded-md hover:bg-green-600 hover:opacity-80 shadow-md"
+                >
+                  Travels
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* <div className="mt-32">
         <div className="flex md:my-20 flex-row justify-center  mt-28 md:mx-52 lg:mx-52 xl:mx-52 2xl:mx-52 mb-50">
           <div className="overflow-y-auto h-full align-center">
             <div className="  p-4 text-sm font-medium text-gray-900 bg-gray-50 border-t border-b border-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:text-white ">
@@ -160,7 +234,6 @@ function Home() {
         </div>
       </div>
 
-      {/* travell part */}
       <div className=" mt-52 mb-40">
         <div className="flex md:my-20 flex-row justify-center mt-30 md:mx-52 lg:mx-52 xl:mx-52 2xl:mx-52 ">
           <div className="overflow-y-auto h-full align-center">
@@ -270,7 +343,7 @@ function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <Footer />
     </>
   );

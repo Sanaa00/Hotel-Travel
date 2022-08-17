@@ -4,10 +4,11 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { IoLocationSharp } from "react-icons/io5";
 import Footer from "../component/Footer";
+import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 
-import SliderCard from "../component/SliderCard";
-import Rating from "react-rating";
 import TripTravelCard from "../component/TripTravelCard";
+import TravelSlideCard from "../component/TravelSlideCard";
+import Loading from "../component/Loading";
 const tripData = [
   {
     tripType: "Egypt Trip",
@@ -46,13 +47,13 @@ const tripData = [
       "https://upload.wikimedia.org/wikipedia/commons/6/6f/Nawroz_festival_in_Akre%2C_Kurdistan_Region_of_Iraq_09.jpg",
   },
   {
-    tripType: "dukan Trip",
+    tripType: "Ahmawa Trip",
     price: "50$",
     duration: 2,
     description:
       "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form",
     imageUrl:
-      "https://www.iraq-businessnews.com/wp-content/uploads/2021/06/Gali-Ali-Beg-waterfall-KRG-Board-of-Tourism.jpg",
+      "https://scontent.febl4-2.fna.fbcdn.net/v/t31.18172-8/11731799_853037788110209_1352790732799268249_o.jpg?_nc_cat=107&ccb=1-7&_nc_sid=730e14&_nc_ohc=1oXU-4hk580AX_yCM98&_nc_ht=scontent.febl4-2.fna&oh=00_AT_Gq7NlyQaIPBre8-utLDhwJLjoHS8EOshDOIfpDX4wjA&oe=631BD539",
   },
   {
     tripType: "Rwandz Trip",
@@ -69,31 +70,6 @@ export default function Travel() {
   const { id } = useParams();
   const [travel, settravel] = useState();
 
-  const yellowStar = (
-    <svg
-      aria-hidden="true"
-      className="w-5 h-5 text-yellow-400"
-      fill="currentColor"
-      viewBox="0 0 20 20"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <title>First star</title>
-      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-    </svg>
-  );
-
-  const greyStar = (
-    <svg
-      aria-hidden="true"
-      className="w-5 h-5 text-gray-400"
-      fill="currentColor"
-      viewBox="0 0 20 20"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <title>First star</title>
-      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-    </svg>
-  );
   useEffect(() => {
     axios
       .get(`http://localhost:3001/travels/${id}`)
@@ -104,41 +80,31 @@ export default function Travel() {
   }, [id]);
 
   if (!travel) {
-    return (
-      <div>
-        {" "}
-        <div className="flex items-center justify-center opacity-50 w-full align-middle  place-content-center">
-          <div className="lds-ring flex items-center justify-center h-full w-full">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-        </div>
-      </div>
-    );
+    return <Loading />;
   }
   return (
     <div>
-      <div className="md:mt-20 my-10 mx-5 lg:mx-20">
+      <div className="md:mt-20 my-10 mx-5 2xl:mx-20 ">
         {/* abou hotel */}
-        <div className="text-3xl font-bold text-green-600  mx-5 md:mx-52 ">
+        <div className="text-3xl font-bold text-green-600  mx-5 2xl:mx-52  lg:mx-24">
           About Travel Agency
         </div>
-        <div className=" flex md:mx-52 bg-gray-50  justify-between  rounded-md mt-4 flex-col shadow-md md:flex-col lg:flex-row">
+        <div className=" flex 2xl:mx-52 bg-gray-50  justify-between  rounded-md mt-4 flex-col shadow-md md:flex-col lg:flex-row  lg:mx-24">
           <div className=" flex flex-col w-full p-4 lg:w-3/5">
             <div className=" text-2xl text-green-600 font-medium">
               {travel.name}
             </div>
             <div>
               {" "}
-              <Rating
-                className="pt-2 mr-2"
-                initialRating={travel.star}
-                fullSymbol={yellowStar}
-                emptySymbol={greyStar}
-                readonly={true}
-              />
+              <div className="text-base flex my-2">
+                {[1, 2, 3, 4, 5].map((_, index) =>
+                  travel.star > index ? (
+                    <AiFillStar key={index} fill="#e8de23" />
+                  ) : (
+                    <AiOutlineStar key={index} color="#e8de23" />
+                  )
+                )}
+              </div>
             </div>
             <div>
               There are many variations of passages of Lorem Ipsum available,
@@ -166,17 +132,19 @@ export default function Travel() {
             />
 
             <div>
-              <div className="text-sm flex flex-row justify-center items-center pt-3 ">
-                <div className="px-1">
-                  <IoLocationSharp />
+              <div className="text-sm flex flex-row justify-center items-center pt-2">
+                <div className="px-1 ">
+                  <IoLocationSharp fill="#0ca34a" className="w-4 h-4" />
                 </div>
-                <div>{travel.location}</div>
+                <div className="text-lg font-medium text-gray-500">
+                  {travel.location}
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <SliderCard />
-        <div className=" md:my-20 my-10 mx-5 md:mx-52 ">
+        <TravelSlideCard />
+        <div className=" md:my-20 my-10 mx-5 2xl:mx-52  lg:mx-24">
           <div className="text-3xl font-bold text-green-600 mb-4">
             Trips & Booking
           </div>{" "}

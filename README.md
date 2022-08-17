@@ -17,6 +17,7 @@
 .RoomHotelCards
 .search
 .SliderCard
+.Loading
 
 -feature
 .react-route
@@ -24,4 +25,5 @@
 .react-datepicker
 .axios
 .{json file}
-.React Rating
+.Rating
+.react-slick
