@@ -6,7 +6,6 @@ function Search({ hotelsData, setHotelsData }) {
   const [search, setSearch] = useState("");
 
   const onSearchChange = (e) => {
-    console.log(e.target.value);
     setSearch(e.target.value);
   };
 

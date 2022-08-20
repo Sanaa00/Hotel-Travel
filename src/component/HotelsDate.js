@@ -15,7 +15,6 @@ export default function HotelsDate({ hotel }) {
     axios
       .get("http://localhost:3001/hotels")
       .then((result) => {
-        console.log(result.data);
         return setHotels(result.data);
       })
       .catch((err) => setErr(err));
@@ -32,10 +31,10 @@ export default function HotelsDate({ hotel }) {
           {Hotels.map((hotel) => {
             return (
               <div key={hotel.id}>
-                <div className="text-xl rounded-md  my-4 2xl:mx-40 lg:mx-20 p-2 bg-gray-50 flex flex-row  hover:bg-gray-100 drop-shadow md:flex-col sm:flex-row lg:w-5/6">
+                <div className="text-xl rounded-md  my-4 2xl:mx-40 lg:mx-20 p-2 bg-gray-50 flex flex-row  hover:bg-gray-100 drop-shadow md:flex-col sm:flex-row lg:w-5/6 sm:w-full m-2">
                   <div className="flex flex-row justify-between">
                     <div className="flex grow flex-col  justify-between basis-3/4">
-                      <div className="flex lg:flex-row flex-col justify-between text-slate-600 lg:pl-8 md:px-2 sm:flex-col">
+                      <div className="flex md:flex-row flex-col justify-between text-slate-600 lg:pl-8 md:px-2 sm:flex-col items-center">
                         <div className=" flex flex-col grow  md:w4/6 w-fit">
                           <div className="text-2xl text-green-600 font-medium ">
                             {hotel.name}
@@ -51,22 +50,22 @@ export default function HotelsDate({ hotel }) {
                               )}
                             </div>
                           </div>
-                          <div className="text-sm">{hotel.description}</div>
+                          <div className="text-sm mr-5">
+                            {hotel.description}
+                          </div>
                         </div>
-                        <div className="flex flex-col grow-0 lg:w-2/6 items-center w-fit justify-center rounded-md">
-                          <div className=" rounded-md grow">
+                        <div className="flex flex-col grow-0 lg:w-2/6 items-center justify-center rounded-md">
+                          <div className="rounded-md grow my-3">
                             <img
-                              className="rounded-lg  object-cover  p-2  lg:w-96  lg:h-64 w-full  "
+                              className="rounded-md object-cover w-96 xl:w-80 h-60"
                               alt="hotel"
-                              height="200"
-                              width="200"
                               src={hotel.image}
                             ></img>
                           </div>
                           <div>
                             <Link
                               to={`/hotel/${hotel.id}`}
-                              className="btn bg-gradient-to-r from-green-600 to-emerald-600 ... text-white text-sm  md:px-auto py-1  p-64  rounded-md my-2 lg:mx-1 drop-shadow-md hover:bg-green-600 hover:opacity-80  xl:px-32 lg:px-28"
+                              className="btn bg-gradient-to-r px-40 w-full from-green-600 to-emerald-600 text-white text-sm  md:px-auto py-1  p-64  rounded-md my-2 lg:mx-1 drop-shadow-md hover:bg-green-600 hover:opacity-80  xl:px-32 lg:px-28"
                             >
                               View
                             </Link>

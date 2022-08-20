@@ -31,13 +31,11 @@ function Home() {
 
   return (
     <>
-      {" "}
-      <div className="container 2xl:mx-48 min-h-screen ">
-        <div className="flex lg:flex-row flex-col items-center justify-center bg-gray-50 rounded-md my-32 p-4 shadow-md">
-          <div className="flex flex-col items-start  grow lg:pl-4 justify-center">
-            <div className="text-green-600 font-bold text-5xl mb-4 ">
-              Our website help tourist and collect <br></br>information in
-              Kurdistan
+      <div className="min-h-screen ">
+        <div className="flex lg:flex-row flex-col items-center justify-center bg-gray-50 rounded-md mx-5 xl:mx-10 mt-20 mb-32 p-2 xl:p-4 shadow-md">
+          <div className="flex flex-col items-start grow justify-center">
+            <div className="text-green-600 font-bold text-2xl xl:text-5xl mb-4">
+              Our website help tourist and collect information in Kurdistan
             </div>
             <div className="text-gray-600">
               when an unknown printer took a galley of type and scrambled it to
@@ -54,26 +52,30 @@ function Home() {
                 </button>
               </div>
               <div className="flex flex-row  justify-center items-center lg:mt-10">
-                <p className="text-3xl font-bold text-green-600 ">30.0 K </p>
+                <p className="text-xl xl:text-3xl font-bold text-green-600 ">
+                  30.0 K{" "}
+                </p>
 
                 <p className="text-gray-400 font-bold">&nbsp; Active User</p>
               </div>
             </div>
           </div>
 
-          <div className="lg:w-3/6 lg:h-fit  items-end justify-center grow-0 h-3/6 w-5/6">
+          <div className="items-end justify-center grow-0 w-full sm:w-full sm:h-fit lg:w-3/6 lg:h-fit">
             <HomeSlider />
           </div>
         </div>
-        <div className="flex flex-col items-center justify-center">
-          <div className="lg:mt-32 sm:mt-10 font-bold text-green-600 text-5xl ">
+        <div className="flex flex-col items-center justify-center mx-5">
+          <div className="sm:mt-4 lg:mt-10 font-bold text-green-600 text-3xl md:text-4xl xl:text-5xl flex justify-center items-center">
             what we serve in this website ?
           </div>
           {/* hotel and travel */}
-          <div className="flex lg:flex-row flex-col justify-center items-center my-20 ">
-            <div className="   rounded-md shadow-md m-3 p-4 h-96 flex flex-col  justify-center bg-gradient-to-r from-green-600/10 to-emerald-600/10 ... lg:py-20">
-              <div className="text-green-600 font-bold text-3xl">Hotels</div>
-              <div className="text-gray-800 xl:mt-6">
+          <div className="flex lg:flex-row flex-col justify-center items-center mt-5 mb-20 xl:mx-10">
+            <div className="rounded-md shadow-md md:p-4 flex flex-col justify-between bg-gradient-to-r from-green-600/10 to-emerald-600/10 lg:py-20 px-2 md:mr-4">
+              <div className="text-green-600 font-bold text-3xl pt-2">
+                Hotels
+              </div>
+              <div className="text-gray-800 xl:mt-6 sm:mb-10">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
                 text ever since the 1500s, when an unknown printer took a galley
@@ -86,19 +88,21 @@ function Home() {
                 Lorem Ipsum.containing Lorem Ipsum passages, and more recently
                 with desktop publishing software like Aldus PageMaker including
               </div>
-              <div className="mt-8 lg:mt-3">
+              <div className="my-6 lg:mt-3">
                 <Link
                   to="/Hotels"
-                  className="bg-gradient-to-r from-green-600 to-emerald-600 ... text-gray-50  py-2 px-12 rounded-md hover:bg-green-600 hover:opacity-80 shadow-md"
+                  className="bg-gradient-to-r from-green-600 to-emerald-600 text-gray-50  py-2 px-12 rounded-md hover:bg-green-600 hover:opacity-80 shadow-md "
                 >
                   Hotels
                 </Link>
               </div>
             </div>
 
-            <div className="   rounded-md shadow-md m-2 p-4 h-96 flex flex-col  justify-center bg-gradient-to-r from-green-600/10 to-emerald-600/10 ... ">
-              <div className="text-green-600 font-bold text-3xl">Travels</div>
-              <div className="text-gray-800 xl:mt-6">
+            <div className="   rounded-md shadow-md md:p-4 flex flex-col  justify-between bg-gradient-to-r from-green-600/10 to-emerald-600/10 lg:py-20 px-2 mt-5 md:ml-4">
+              <div className="text-green-600 font-bold text-3xl pt-2">
+                Travels
+              </div>
+              <div className="text-gray-800 xl:mt-6 sm:mb-10">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
                 text ever since the 1500s, when an unknown printer took a galley
@@ -111,10 +115,10 @@ function Home() {
                 Lorem Ipsum.containing Lorem Ipsum passages, and more recently
                 with desktop publishing software like Aldus PageMaker including
               </div>
-              <div className="mt-8 lg:mt-3">
+              <div className="my-6 lg:mt-3">
                 <Link
                   to="/Travels"
-                  className="bg-gradient-to-r from-green-600 to-emerald-600 ... text-gray-50  py-2 px-12 rounded-md hover:bg-green-600 hover:opacity-80 shadow-md"
+                  className="bg-gradient-to-r from-green-600 to-emerald-600 text-gray-50  py-2 px-12 rounded-md hover:bg-green-600 hover:opacity-80 shadow-md "
                 >
                   Travels
                 </Link>
