@@ -52,7 +52,7 @@ function Hotel() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/hotels/${id}`)
+      .get(`https://hotel-travel-server.herokuapp.com//${id}`)
       .then((result) => {
         setHotel(result.data);
       })

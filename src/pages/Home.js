@@ -9,7 +9,7 @@ function Home() {
 
   // useEffect(() => {
   //   axios
-  //     .get("http://localhost:3001/hotels")
+  //     .get("https://hotel-travel-server.herokuapp.com/")
   //     .then((result) => {
   //       console.log(result.data);
   //       return setHotels(result.data);

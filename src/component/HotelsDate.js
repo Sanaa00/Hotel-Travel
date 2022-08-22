@@ -13,7 +13,7 @@ export default function HotelsDate({ hotel }) {
   useEffect(() => {
     // get request to the API endpoint
     axios
-      .get("http://localhost:3001/hotels")
+      .get("https://hotel-travel-server.herokuapp.com/")
       .then((result) => {
         return setHotels(result.data);
       })
