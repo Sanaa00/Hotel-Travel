@@ -14,9 +14,9 @@ export default function Travels() {
   useEffect(() => {
     // get request to the API endpoint
     axios
-      .get("http://localhost:3001/travels")
+      .get("https://hotel-travel-server.herokuapp.com/hotels")
       .then((result) => {
-        return setTravel(result.data);
+        return setTravel(result.data.travels);
       })
       .catch((err) => setErr(err));
   }, []);

@@ -72,9 +72,12 @@ export default function Travel() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/travels/${id}`)
+      .get(`https://hotel-travel-server.herokuapp.com/hotels`)
       .then((result) => {
-        settravel(result.data);
+        const res = result.data.travels.filter(
+          (travel) => travel.id === parseInt(id)
+        );
+        settravel(res);
       })
       .catch((err) => console.log(err));
   }, [id]);
@@ -92,13 +95,13 @@ export default function Travel() {
         <div className=" flex 2xl:mx-52 bg-gray-50  justify-between  rounded-md mt-4 flex-col shadow-md md:flex-col lg:flex-row  lg:mx-24">
           <div className=" flex flex-col w-full p-4 lg:w-3/5">
             <div className=" text-2xl text-green-600 font-medium">
-              {travel.name}
+              {travel[0].name}
             </div>
             <div>
               {" "}
               <div className="text-base flex my-2">
                 {[1, 2, 3, 4, 5].map((_, index) =>
-                  travel.star > index ? (
+                  travel[0].star > index ? (
                     <AiFillStar key={index} fill="#e8de23" />
                   ) : (
                     <AiOutlineStar key={index} color="#e8de23" />
@@ -128,7 +131,7 @@ export default function Travel() {
             <img
               className="rounded-lg object-fit w-5/6 h-5/6 shadow-md"
               alt="hotel"
-              src={travel.image}
+              src={travel[0].image}
             />
 
             <div>
@@ -137,7 +140,7 @@ export default function Travel() {
                   <IoLocationSharp fill="#0ca34a" className="w-4 h-4" />
                 </div>
                 <div className="text-lg font-medium text-gray-500">
-                  {travel.location}
+                  {travel[0].location}
                 </div>
               </div>
             </div>

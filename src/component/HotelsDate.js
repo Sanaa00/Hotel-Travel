@@ -7,15 +7,15 @@ import Search from "./Search";
 import Loading from "./Loading";
 
 export default function HotelsDate({ hotel }) {
-  const [Hotels, setHotels] = useState();
+  const [Hotels, setHotels] = useState([]);
   const [err, setErr] = useState("");
 
   useEffect(() => {
     // get request to the API endpoint
     axios
-      .get("https://hotel-travel-server.herokuapp.com/")
+      .get("https://hotel-travel-server.herokuapp.com/hotels")
       .then((result) => {
-        return setHotels(result.data);
+        return setHotels(result.data.hotels);
       })
       .catch((err) => setErr(err));
   }, []);
@@ -28,7 +28,7 @@ export default function HotelsDate({ hotel }) {
       <Search hotelsData={Hotels} setHotelsData={setHotels} />
       <div className="container mx-auto my-10  min-h-screen">
         <ul>
-          {Hotels.map((hotel) => {
+          {Hotels?.map((hotel) => {
             return (
               <div key={hotel.id}>
                 <div className="text-xl rounded-md  my-4 2xl:mx-40 lg:mx-20 p-2 bg-gray-50 flex flex-row  hover:bg-gray-100 drop-shadow md:flex-col sm:flex-row lg:w-5/6 sm:w-full m-2">

@@ -52,9 +52,12 @@ function Hotel() {
 
   useEffect(() => {
     axios
-      .get(`https://hotel-travel-server.herokuapp.com//${id}`)
-      .then((result) => {
-        setHotel(result.data);
+      .get(`https://hotel-travel-server.herokuapp.com/hotels`)
+      .then(async (result) => {
+        const res = await result.data.hotels.filter(
+          (hotel) => hotel.id === parseInt(id)
+        );
+        setHotel(res);
       })
       .catch((err) => console.log(err));
   }, [id]);
@@ -72,11 +75,11 @@ function Hotel() {
         <div className=" flex 2xl:mx-52 bg-gray-50  justify-between  rounded-md mt-4 flex-col shadow-md md:flex-col lg:flex-row">
           <div className=" flex flex-col w-full p-6 lg:w-3/5 justify-between ">
             <div className=" text-2xl text-green-600 font-bold">
-              {hotel.name}
+              {hotel[0].name}
             </div>
             <div className="text-base flex ">
               {[1, 2, 3, 4, 5].map((_, index) =>
-                hotel.star > index ? (
+                hotel[0].star > index ? (
                   <AiFillStar key={index} fill="#e8de23" />
                 ) : (
                   <AiOutlineStar key={index} color="#e8de23" />
@@ -119,7 +122,7 @@ function Hotel() {
             <img
               className="rounded-lg object-fit w-full h-full "
               alt="hotel"
-              src={hotel.image}
+              src={hotel[0].image}
             />
 
             <div>
@@ -128,7 +131,7 @@ function Hotel() {
                   <IoLocationSharp fill="#0ca34a" className="w-4 h-4" />
                 </div>
                 <div className="text-lg font-medium text-gray-500">
-                  {hotel.location}
+                  {hotel[0].location}
                 </div>
               </div>
             </div>
