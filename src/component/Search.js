@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { IoFilter } from "react-icons/io5";
 
 function Search({ hotelsData, setHotelsData }) {
   const [hotels] = useState(hotelsData);
@@ -31,9 +30,6 @@ function Search({ hotelsData, setHotelsData }) {
               className="bg-transparent hover:border-0  focus:outline-none   w-full "
               onChange={onSearchChange}
             ></input>
-            <button>
-              <IoFilter className="h-6 w-6" />
-            </button>
           </div>
         </form>
       </div>

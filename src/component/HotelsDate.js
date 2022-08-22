@@ -7,7 +7,7 @@ import Search from "./Search";
 import Loading from "./Loading";
 
 export default function HotelsDate({ hotel }) {
-  const [Hotels, setHotels] = useState([]);
+  const [Hotels, setHotels] = useState();
   const [err, setErr] = useState("");
 
   useEffect(() => {
@@ -15,7 +15,7 @@ export default function HotelsDate({ hotel }) {
     axios
       .get("https://hotel-travel-server.herokuapp.com/hotels")
       .then((result) => {
-        return setHotels(result.data.hotels);
+        return setHotels(result?.data?.hotels);
       })
       .catch((err) => setErr(err));
   }, []);
