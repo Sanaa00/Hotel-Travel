@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function Profile() {
   return (
     <div>
-      <div className="flex flex-col justify-center items-center m-5 sm:mx-auto sm:w-3/5 lg:w-2/5 xl:w-1/4 bg-gray-50 py-20 shadow-md">
+      <div className="flex flex-col justify-center items-center m-5 sm:mx-auto sm:w-3/5 lg:w-2/5 xl:w-1/4 bg-gray-50 py-20 shadow-md mt-10">
         <div className="flex flex-col items-center ">
           <p className="text-3xl text-green-600  font-medium"> Welcome Back!</p>
           <p className="text-2xl text-green-600 font-medium mt-3">Log in</p>

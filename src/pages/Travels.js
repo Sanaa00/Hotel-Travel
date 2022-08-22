@@ -35,8 +35,8 @@ export default function Travels() {
                 <div className="text-xl rounded-md lg:mx-20 my-4 2xl:mx-40 p-2 bg-gray-50 flex flex-row  hover:bg-gray-100 drop-shadow md:flex-col sm:flex-row xl:w-5/6 mx-2">
                   <div className="flex flex-row justify-between items-center">
                     <div className="flex grow flex-col  justify-between lg:basis-3/4 items-center">
-                      <div className="flex md:flex-row flex-col justify-between text-slate-600 lg:pl-8 sm:flex-col">
-                        <div className=" flex flex-col grow  md:w4/6 w-fit">
+                      <div className="flex md:flex-row flex-col justify-between text-slate-600 lg:pl-8 sm:flex-col items-center">
+                        <div className=" flex flex-col grow  md:w4/6 w-fit justify-center">
                           <div className="text-2xl text-green-600 font-medium ">
                             {travel.name}
                           </div>
@@ -63,7 +63,7 @@ export default function Travels() {
                               src={travel.image}
                             ></img>
                           </div>
-                          <div>
+                          <div className="my-1">
                             <Link
                               to={`/travel/${travel.id}`}
                               className="btn bg-gradient-to-r from-green-600 to-emerald-600 ... text-white text-sm  md:px-32 py-1  p-64  rounded-md my-2 lg:mx-1 drop-shadow-md hover:bg-green-600 hover:opacity-80 xl:px-32 lg:px-28 px-32"

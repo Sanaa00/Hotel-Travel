@@ -98,7 +98,7 @@ function Home() {
               </div>
             </div>
 
-            <div className="   rounded-md shadow-md md:p-4 flex flex-col  justify-between bg-gradient-to-r from-green-600/10 to-emerald-600/10 lg:py-20 px-2 mt-5 md:ml-4">
+            <div className="   rounded-md shadow-md md:p-4 flex flex-col  justify-between bg-gradient-to-r from-green-600/10 to-emerald-600/10 lg:py-20 px-2 mt-5 md:ml-4 lg:mt-0">
               <div className="text-green-600 font-bold text-3xl pt-2">
                 Travels
               </div>

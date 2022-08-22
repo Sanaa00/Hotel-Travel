@@ -1,11 +1,26 @@
 import React from "react";
 import Slider from "react-slick";
+import { useState, useEffect } from "react";
 export default function TravelSlideCard() {
+  const [cardNumber, setCardNumber] = useState(1);
+
+  useEffect(() => {
+    (async () => {
+      // eslint-disable-next-line no-restricted-globals
+      if (innerWidth <= 768) {
+        setCardNumber(1);
+      } else {
+        setCardNumber(3);
+      }
+    })();
+
+    // eslint-disable-next-line no-restricted-globals, react-hooks/exhaustive-deps
+  }, [innerWidth]);
   const settings = {
     dots: true,
     infinite: false,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: cardNumber,
     slidesToScroll: 1,
   };
 

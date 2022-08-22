@@ -144,11 +144,11 @@ export default function Travel() {
           </div>
         </div>
         <TravelSlideCard />
-        <div className=" md:my-20 my-10 mx-5 2xl:mx-52  lg:mx-24">
+        <div className="lg:mt-20 mt-10 mx-5 2xl:mx-52">
           <div className="text-3xl font-bold text-green-600 mb-4">
             Trips & Booking
           </div>{" "}
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-y-8 gap-4">
             {tripData.map((trip, i) => (
               <TripTravelCard
                 key={i}
