@@ -89,7 +89,7 @@ export default function Travel() {
     <div>
       <div className="md:mt-20 my-10 mx-5 2xl:mx-20 ">
         {/* abou hotel */}
-        <div className="text-3xl font-bold text-green-600  mx-5 2xl:mx-52  lg:mx-24">
+        <div className="text-3xl font-bold text-green-600  mx-5 2xl:mx-40  lg:mx-24">
           About Travel Agency
         </div>
         <div className=" flex 2xl:mx-52 bg-gray-50  justify-between  rounded-md mt-4 flex-col shadow-md md:flex-col lg:flex-row  lg:mx-24">

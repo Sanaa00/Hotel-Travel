@@ -69,7 +69,7 @@ function Hotel() {
     <>
       <div className="md:mt-20 mt-10 mx-5 2xl:mx-20 mb-32 lg:mx-24">
         {/* abou hotel */}
-        <div className="text-3xl font-bold text-green-600  mx-5 2xl:mx-52 ">
+        <div className="text-3xl font-bold text-green-600  mx-5 2xl:mx-40 ">
           About Hotel
         </div>
         <div className=" flex 2xl:mx-52 bg-gray-50  justify-between  rounded-md mt-4 flex-col shadow-md md:flex-col lg:flex-row">
