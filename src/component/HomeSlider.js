@@ -35,7 +35,6 @@ export default function HomeSlider() {
             </div>
           </div>
           <div>
-            {" "}
             <div className=" bg-gray-50 m-2 flex flex-col item-center justify-center rounded-md w-fit shadow-md">
               <img
                 className="rounded-md object-cover h-full w-full"
@@ -45,7 +44,6 @@ export default function HomeSlider() {
             </div>
           </div>
           <div>
-            {" "}
             <div className=" bg-gray-50 m-2 flex flex-col item-center justify-center rounded-md w-fit shadow-md">
               <img
                 className="rounded-md object-cover h-full w-full"
@@ -55,7 +53,6 @@ export default function HomeSlider() {
             </div>
           </div>
           <div>
-            {" "}
             <div className=" bg-gray-50 m-2 flex flex-col item-center justify-center rounded-md w-fit shadow-md">
               <img
                 className="rounded-md object-cover h-full w-full"
