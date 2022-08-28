@@ -30,8 +30,8 @@ export default function Signin() {
                   className="w-full border-none bg-transparent outline-none placeholder:italic focus:outline-none"
                 />
               </div>
-              <div className="mt-5 mb-2 rounded-md bg-green-600  py-2 font-medium text-l hover:bg-green-400   text-white shadow-lg text-center ">
-                <Link to="/Home">Regester</Link>
+              <div className="mt-5 mb-2 rounded-md bg-gradient-to-r from-green-600 to-emerald-600  py-2 font-medium text-l hover:bg-green-400   text-white shadow-lg text-center ">
+                <Link to="/">Regester</Link>
               </div>{" "}
               <div className="flex flex-row">
                 <p className="mr-1 text-gray-500">Do you have accont? </p>

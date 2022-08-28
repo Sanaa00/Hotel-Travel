@@ -18,10 +18,10 @@ function ForgetPassword() {
                 className=" border-none bg-transparent outline-none placeholder:italic focus:outline-none"
               />
             </div>
-            <div className="mt-5 mb-2 rounded-md bg-green-600  py-2 font-medium text-l hover:bg-green-400   text-white shadow-lg text-center ">
-              <Link to="/Home">Send</Link>
+            <div className="mt-5 mb-2 rounded-md bg-gradient-to-r from-green-600 to-emerald-600  py-2 font-medium text-l hover:bg-green-400   text-white shadow-lg text-center ">
+              <Link to="/Profileg">Send</Link>
             </div>{" "}
-            <Link to="/ForgetPassword" className="text-blue-500">
+            <Link to="/Profile" className="text-blue-500">
               login here
             </Link>
             <div className="flex flex-row">

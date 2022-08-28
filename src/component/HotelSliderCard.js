@@ -47,7 +47,7 @@ function HotelSliderCard() {
                 </div>
               </div>
               <img
-                className="   rounded-md"
+                className="rounded-md"
                 alt="breackfast"
                 src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
               />
@@ -70,7 +70,7 @@ function HotelSliderCard() {
                 </div>
               </div>
               <img
-                className="  rounded-md "
+                className="rounded-md"
                 alt="GYM"
                 src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"
               />
@@ -93,7 +93,7 @@ function HotelSliderCard() {
                 </div>
               </div>
               <img
-                className="  rounded-md"
+                className="rounded-md"
                 alt="Parking"
                 src="https://images.unsplash.com/photo-1562426509-5044a121aa49?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
               />

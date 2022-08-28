@@ -11,9 +11,9 @@ function ModalButton({ modalIsOpen, closeModal }) {
 
   return (
     <div>
-      <div className="flex flex-col justify-center items-center ">
+      <div className="flex flex-col justify-center items-center">
         <Modal
-          className="container w-1/2 lg:w-2/5 lg:h-2/3 xl:h-3/6 mx-auto bg-gray-50 shadow-md rounded-md flex px-10 py-4 md:mt-80 lg:mt-20 flex-col justify-center items-center "
+          className="container md:w-1/2 lg:w-2/5 lg:h-2/3 xl:h-3/6 md:mx-auto bg-gray-50 shadow-md rounded-md flex px-10 py-4  md:mt-80 lg:mt-20 flex-col justify-center items-center "
           isOpen={modalIsOpen}
           onAfterOpen={afterOpenModal}
           onRequestClose={closeModal}

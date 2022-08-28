@@ -63,14 +63,14 @@ export default function HomeSlider() {
                 src="https://images.adsttc.com/media/images/60b6/09d7/f91c/8199/fb00/00cd/slideshow/shutterstock_1196821240.jpg?1622542766"
               />
             </div>
-          </div>
+          </div>{" "}
           <div>
             {" "}
             <div className=" bg-gray-50 m-2 flex flex-col item-center justify-center rounded-md w-fit shadow-md">
               <img
                 className="rounded-md object-cover h-full w-full"
                 alt="breackfast"
-                src="https://www.planetware.com/wpimages/2019/10/switzerland-in-pictures-most-beautiful-places-zermatt.jpg"
+                src="https://cdn.britannica.com/43/134743-050-D0625A44/train-first-Dubai-emirate-rapid-transit-line-kind-Sept-10-2009.jpg"
               />
             </div>
           </div>
