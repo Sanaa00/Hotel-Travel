@@ -60,16 +60,7 @@ export default function TravelSlideCard() {
               />
             </div>
           </div>
-          <div>
-            {" "}
-            <div className=" bg-gray-50 m-2 flex flex-col item-center justify-center md:w-6/6 rounded-md w-fit shadow-md">
-              <img
-                className="   rounded-md"
-                alt="breackfast"
-                src="http://discovererbil.com/wp-content/uploads/2015/05/gali-ali-beg-summer-resort-2-1024x680.jpg"
-              />
-            </div>
-          </div>
+
           <div>
             {" "}
             <div className=" bg-gray-50 m-2 flex flex-col item-center justify-center md:w-6/6 rounded-md w-fit shadow-md">

@@ -48,15 +48,6 @@ export default function HomeSlider() {
               <img
                 className="rounded-md object-cover h-full w-full"
                 alt="breackfast"
-                src="http://discovererbil.com/wp-content/uploads/2015/05/gali-ali-beg-summer-resort-2-1024x680.jpg"
-              />
-            </div>
-          </div>
-          <div>
-            <div className=" bg-gray-50 m-2 flex flex-col item-center justify-center rounded-md w-fit shadow-md">
-              <img
-                className="rounded-md object-cover h-full w-full"
-                alt="breackfast"
                 src="https://images.adsttc.com/media/images/60b6/09d7/f91c/8199/fb00/00cd/slideshow/shutterstock_1196821240.jpg?1622542766"
               />
             </div>
