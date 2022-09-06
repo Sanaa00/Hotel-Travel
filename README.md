@@ -39,6 +39,7 @@ user can book travel package or cancel it .
 .react-icon
 .react-datepicker
 .axios
+<<<<<<< HEAD
 .using JSON like a server
 .Rating
 .react-slick
@@ -46,3 +47,10 @@ user can book travel package or cancel it .
 .Modal
 .using Heroku for deploy backend
 .using Netlify fpe deploy frontend
+=======
+.using JSON like server
+.Rating
+.react-slick
+.using Heroku for deply backend
+.using Netlify for deploy front end 
+>>>>>>> 9a8ba3c0972b061f937942e021264fa12be3d639
